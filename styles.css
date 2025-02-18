@@ -1,0 +1,251 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Background with Neon Glow */
+body {
+    background: linear-gradient(45deg, #120136, #5c067e, #c70039, #ff5733);
+    background-size: 300% 300%;
+    animation: bgAnimation 10s infinite alternate;
+    color: #fff;
+}
+
+@keyframes bgAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Glassmorphism Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    transition: 0.3s ease-in-out;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ff4d00;
+    text-shadow: 0 0 10px #ff4d00, 0 0 20px #ff2200;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: #ff4d00;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: #ff4d00;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Hero Section with Cool Animations */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('clg.jpg') center/cover no-repeat;
+    animation: neonShadow 2s infinite alternate;
+}
+
+@keyframes neonShadow {
+    0% { box-shadow: 0 0 30px #ff4d00; }
+    100% { box-shadow: 0 0 50px #ff5733; }
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 15px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.hero h1 {
+    font-size: 50px;
+    animation: neonGlow 2s infinite alternate;
+}
+
+.hero h1 span {
+    color: #ff4d00;
+}
+
+.glow-text {
+    text-shadow: 0 0 10px #ff4d00, 0 0 20px #ff2200, 0 0 30px #ff2200;
+}
+
+@keyframes neonGlow {
+    0% {
+        text-shadow: 0 0 10px #ff4d00, 0 0 20px #ff2200;
+    }
+    100% {
+        text-shadow: 0 0 15px #ff2200, 0 0 30px #ff4d00;
+    }
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    color: white;
+    background: linear-gradient(90deg, #ff4d00, #ff5733);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 15px rgba(255, 77, 0, 0.5);
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 77, 0, 0.7);
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.section-title span {
+    color: #ff4d00;
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.about {
+    margin-top: 10px;
+}
+#about {
+    text-align: center;
+}
+/* Course & Facility Cards */
+/* Our Courses Section */
+.course-container, .facility-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.course-card, .facility-card {
+    width: 320px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 🟢 This forces all images to be equal in size */
+.course-img-container {
+    width: 100%;
+    height: 200px; /* Set a fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Prevents overflow */
+    background: #222; /* Fallback color */
+}
+
+.course-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 🔥 Ensures entire image fits inside */
+}
+
+/* Hover Effects */
+.course-card:hover, .facility-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 77, 0, 0.8);
+}
+
+.course-card::before, .facility-card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff4d00, #ff5733, #c70039);
+    z-index: -1;
+    border-radius: 10px;
+}
+
+/* Contact Section */
+.contact {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    font-size: 14px;
+    color: #bbb;
+}
